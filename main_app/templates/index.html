@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Home</title>
+	</head>
+	<body>
+		<h1>Hello World</h1>
+		<p>Welcome to the home page. This is a common page for all users. The links provided below are account specific. They can only be accessed by registered users.</p>
+		<hr>
+		{% if user.is_authenticated %}
+		<h4>Hello {{ user.username }}</h4>
+		<a href="/account/logout/">Logout</a>
+		{% else %}
+		<a href="account/register/">Register</a>
+		<a href="/account/login/">Login</a>
+		{% endif %}
+		<hr>
+		{% for msg in messages %}
+		<h4>{{ msg }}</h4>
+		{% endfor %}
+		<hr>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae posuere nibh. Quisque rhoncus ornare tellus, et facilisis nibh elementum id. Nunc metus metus, fringilla et diam vitae, laoreet cursus ante. Sed pulvinar, purus id feugiat porta, tellus nulla vulputate mi, at ullamcorper massa lectus eu enim. Cras libero risus, venenatis sit amet posuere sed, fermentum vel felis. Vestibulum urna ipsum, luctus sit amet maximus at, hendrerit sed augue. Integer nunc augue, rutrum non convallis faucibus, vehicula et justo. Phasellus tristique dolor a erat consequat fermentum.</p>
+		<p>Integer consectetur odio ut luctus eleifend. Fusce pulvinar nulla id felis efficitur sollicitudin. Duis efficitur ligula eu lacus suscipit, quis ullamcorper est tincidunt. Vivamus vehicula sit amet dolor rutrum rutrum. Donec at scelerisque nibh, eu laoreet enim. Fusce facilisis nulla at leo consequat, nec finibus lacus lacinia. Integer bibendum nulla nec arcu sollicitudin, eget posuere enim placerat. Donec fermentum dolor sed nulla fermentum, in volutpat est cursus. Curabitur ut est non ante dignissim aliquam ut vel diam. Curabitur condimentum ultrices sem, sit amet feugiat libero ullamcorper ullamcorper. Aenean sit amet felis auctor, lobortis nunc a, egestas metus. Nulla faucibus sem ut bibendum imperdiet. Sed cursus sit amet enim dictum iaculis. Ut convallis libero et eros eleifend maximus. Maecenas posuere congue sapien at ultricies.</p>
+		<p>Fusce hendrerit mollis metus eu rhoncus. Morbi id posuere risus, vel pretium libero. Phasellus imperdiet, lacus nec interdum convallis, libero est maximus massa, at ultrices nisi tellus dignissim urna. Proin sagittis eu mi condimentum feugiat. Donec condimentum malesuada odio efficitur pretium. Aliquam pulvinar commodo blandit. Aliquam pharetra orci nibh, vitae porta ipsum placerat vitae. Etiam imperdiet aliquam aliquet. Aenean id fermentum risus. Ut congue tempus viverra. Vestibulum venenatis eros eget dui commodo commodo. In at felis eros. Aenean auctor augue tincidunt urna congue, eget laoreet neque convallis. Sed consequat imperdiet nisl in ornare.</p>
+	</body>
+</html>
